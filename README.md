@@ -15,7 +15,7 @@ http://www.ryanfrantz.com/2012/03/04/sql-server-database-storage-utilization-via
 ### No Arguments ###
 `exec sp_SDS`
 
-This results in output similar to the following (**two result sets**):
+This results in output similar to the following (__two result sets__):
 
 _All values are measured in megabytes (MB)._
 
@@ -41,7 +41,7 @@ If the default output contains more information than you'd like, pass the argume
 
 `exec sp_SDS @mode = 'simple'`
 
-This results in __**truncated**__ output similar to the following (**two result sets**):
+This results in __truncated__ output similar to the following (__two result sets__):
 
 _All values are measured in megabytes (MB)._
 
@@ -155,7 +155,7 @@ _All values are measured in megabytes (MB)._
 </table>
 
 ### Argument: `@allocation_stats = 'true'` ###
-To find out how much storage is allocated to a given database (including data, indexes, and logs), from the available __**physical**__ allocation, pass the argument `@allocation_stats = 'true'` to `sp_SDS`:
+To find out how much storage is allocated to a given database (including data, indexes, and logs), from the available __physical__ allocation, pass the argument `@allocation_stats = 'true'` to `sp_SDS`:
 
 `exec sp_SDS poobah, @allocation_stats = 'true'`
 
@@ -168,7 +168,7 @@ _All values are measured in megabytes (MB)._
 <tr><td>poobah</td><td>6138.00 MB</td><td>0.00 MB</td></tr>
 </table>
 
-**NOTE: Use of the `@allocation_stats = 'true'` argument __REQUIRES__ that a database name be specified.**
+__NOTE: Use of the `@allocation_stats = 'true'` argument __REQUIRES__ that a database name be specified.__
 
 ### Argument: `@reserved_stats = 'true'` ###
 To determine how much storage is reserved by a database, its data, and indexes, pass the argument `@reserved_stats = 'true'` to `sp_SDS`.
@@ -184,10 +184,10 @@ _All values are measured in kilobytes (KB)._
 <tr><td>5973920 KB</td><td>3450408 KB</td><td>1879920 KB</td><td>643592 KB</td></tr>
 </table>
 
-**NOTE: Use of the `@allocation_stats = 'true'` argument __REQUIRES__ that a database name be specified.**
+__NOTE: Use of the `@allocation_stats = 'true'` argument __REQUIRES__ that a database name be specified.__
 
 # TODO #
 
-**Determine why the results of `@allocation_stats = 'true'` and `@reserved_stats = 'true'` don't jibe.**
+__Determine why the results of `@allocation_stats = 'true'` and `@reserved_stats = 'true'` don't jibe.__
 
-**EXAMPLE: `@allocation_stats = 'true'` shows `database_size` = __6138.00 MB__ and `unallocated space` = __0.00 MB__ while `@reserved_stats = 'true'` shows `reserved` = __5833.90 MB__ (manually calculated as 5973920 KB / 1024).  Where is the remaining __~305 MB__?**
+__EXAMPLE: `@allocation_stats = 'true'` shows `database_size` = __6138.00 MB__ and `unallocated space` = __0.00 MB__ while `@reserved_stats = 'true'` shows `reserved` = __5833.90 MB__ (manually calculated as 5973920 KB / 1024).  Where is the remaining __~305 MB__?__
