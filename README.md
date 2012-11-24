@@ -36,8 +36,8 @@ _All values are measured in megabytes (MB)._
 </table>
 ----
 <table>
- |**SUM**|**USED**|**FREE**|**TOTAL**|**DATA**|**LOG**|
- |MB|27397.51|14104.80|41502.31|34852.62|6649.69|
+<tr><th>**SUM**</th><th>**USED**</th><th>**FREE**</th><th>**TOTAL**</th><th>**DATA**</th><th>**LOG**</th></tr>
+<tr><td>MB</td><td>27397.51</td><td>14104.80</td><td>41502.31</td><td>34852.62</td><td>6649.69</td></tr>
 </table>
 
 === Argument: `@mode = 'simple'` ===
