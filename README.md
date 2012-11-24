@@ -23,7 +23,8 @@ This results in output similar to the following (**two result sets**):
 
 _All values are measured in megabytes (MB)._
 
- |**WEIGHT (%)**|**DATABASE**|**DATABASE USED  (%)**|**+**|**DATABASE FREE  (%)**|****|**DATABASE TOTAL**|****|**DATA  (used,  %)**|**+**|**LOG  (used,  %)**|
+<table>
+<th>**WEIGHT (%)**</th><th>**DATABASE**</th><th>**DATABASE USED  (%)**</th><th>**+**</th><th>**DATABASE FREE  (%)**</th><th>****</th><th>**DATABASE TOTAL**</th><th>****</th><th>**DATA  (used,  %)**</th><th>**+**</th><th>**LOG  (used,  %)**</th><th>
  |0.01|master|3.46  (69.20 %)|+|1.54  (30.80 %)|=|5.00|=|4.00  (2.94,  73.50%)|+|1.00  (0.52,  52.00%)|
  |0.00|model|1.69  (96.57 %)|+|0.06  (3.43 %|=|1.75|=|1.25  (1.25,  100.00%)|+|0.50  (0.44,  88.00%)|
  |0.09|msdb|29.48  (83.35 %)|+|5.89  (16.65 %)|=|35.37|=|30.31  (27.63,  91.16%)|+|5.06  (1.85,  36.56%)|
@@ -32,9 +33,12 @@ _All values are measured in megabytes (MB)._
  |0.01|ReportServerTempDB|1.83  (61.00 %)|+|1.17  (39.00 %)|=|3.00|=|2.25  (1.44,  64.00%)|+|0.75  (0.39,  52.00%)|
  |0.13|tempdb|4.63  (8.86 %)|+|47.62  (91.14 %)|=|52.25|=|49.75  (2.94,  5.91%)|+|2.50  (1.69,  67.60%)|
  |84.95|xanadu|21912.05  (62.15 %)|+|13345.51  (37.85 %)|=|35257.56|=|29236.00  (21845.81,  74.72%)|+|6021.56  (66.24,  1.10%)|
+</table>
 ----
+<table>
  |**SUM**|**USED**|**FREE**|**TOTAL**|**DATA**|**LOG**|
  |MB|27397.51|14104.80|41502.31|34852.62|6649.69|
+</table>
 
 === Argument: `@mode = 'simple'` ===
 If the default output contains more information than you'd like, pass the argument `@mode = 'simple'` to `sp_SDS`:
