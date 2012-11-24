@@ -25,14 +25,14 @@ _All values are measured in megabytes (MB)._
 
 <table>
 <tr><th>**WEIGHT (%)**</th><th>**DATABASE**</th><th>**DATABASE USED  (%)**</th><th>**+**</th><th>**DATABASE FREE  (%)**</th><th>****</th><th>**DATABASE TOTAL**</th><th>****</th><th>**DATA  (used,  %)**</th><th>**+**</th><th>**LOG  (used,  %)**</th></tr>
-<tr>0.01|master|3.46  (69.20 %)|+|1.54  (30.80 %)|=|5.00|=|4.00  (2.94,  73.50%)|+|1.00  (0.52,  52.00%)</tr>
-<tr>0.00|model|1.69  (96.57 %)|+|0.06  (3.43 %|=|1.75|=|1.25  (1.25,  100.00%)|+|0.50  (0.44,  88.00%)</tr>
-<tr>0.09|msdb|29.48  (83.35 %)|+|5.89  (16.65 %)|=|35.37|=|30.31  (27.63,  91.16%)|+|5.06  (1.85,  36.56%)</tr>
-<tr>14.79|poobah|5440.47  (88.64 %)|+|697.53  (11.36 %)|=|6138.00|=|5525.81  (5426.94,  98.21%)|+|612.19  (13.53,  2.21%)</tr>
-<tr>0.02|ReportServer|3.90  (41.58 %)|+|5.48  (58.42 %)|=|9.38|=|3.25  (2.88,  88.62%)|+|6.13  (1.02,  16.64%)</tr>
-<tr>0.01|ReportServerTempDB|1.83  (61.00 %)|+|1.17  (39.00 %)|=|3.00|=|2.25  (1.44,  64.00%)|+|0.75  (0.39,  52.00%)</tr>
-<tr>0.13|tempdb|4.63  (8.86 %)|+|47.62  (91.14 %)|=|52.25|=|49.75  (2.94,  5.91%)|+|2.50  (1.69,  67.60%)</tr>
-<tr>84.95|xanadu|21912.05  (62.15 %)|+|13345.51  (37.85 %)|=|35257.56|=|29236.00  (21845.81,  74.72%)|+|6021.56  (66.24,  1.10%)</tr>
+<tr><td>0.01</td><td>master</td><td>3.46  (69.20 %)</td><td>+</td><td>1.54  (30.80 %)</td><td>=</td><td>5.00</td><td>=</td><td>4.00  (2.94,  73.50%)</td><td>+</td><td>1.00  (0.52,  52.00%)</td></tr>
+<tr><td>0.00</td><td>model</td><td>1.69  (96.57 %)</td><td>+</td><td>0.06  (3.43 %</td><td>=</td><td>1.75</td><td>=</td><td>1.25  (1.25,  100.00%)</td><td>+</td><td>0.50  (0.44,  88.00%)</td></tr>
+<tr><td>0.09</td><td>msdb</td><td>29.48  (83.35 %)</td><td>+</td><td>5.89  (16.65 %)</td><td>=</td><td>35.37</td><td>=</td><td>30.31  (27.63,  91.16%)</td><td>+</td><td>5.06  (1.85,  36.56%)</td></tr>
+<tr><td>14.79</td><td>poobah</td><td>5440.47  (88.64 %)</td><td>+</td><td>697.53  (11.36 %)</td><td>=</td><td>6138.00</td><td>=</td><td>5525.81  (5426.94,  98.21%)</td><td>+</td><td>612.19  (13.53,  2.21%)</td></tr>
+<tr><td>0.02</td><td>ReportServer</td><td>3.90  (41.58 %)</td><td>+</td><td>5.48  (58.42 %)</td><td>=</td><td>9.38</td><td>=</td><td>3.25  (2.88,  88.62%)</td><td>+</td><td>6.13  (1.02,  16.64%)</td></tr>
+<tr><td>0.01</td><td>ReportServerTempDB</td><td>1.83  (61.00 %)</td><td>+</td><td>1.17  (39.00 %)</td><td>=</td><td>3.00</td><td>=</td><td>2.25  (1.44,  64.00%)</td><td>+</td><td>0.75  (0.39,  52.00%)</td></tr>
+<tr><td>0.13</td><td>tempdb</td><td>4.63  (8.86 %)</td><td>+</td><td>47.62  (91.14 %)</td><td>=</td><td>52.25</td><td>=</td><td>49.75  (2.94,  5.91%)</td><td>+</td><td>2.50  (1.69,  67.60%)</td></tr>
+<tr><td>84.95</td><td>xanadu</td><td>21912.05  (62.15 %)</td><td>+</td><td>13345.51  (37.85 %)</td><td>=</td><td>35257.56</td><td>=</td><td>29236.00  (21845.81,  74.72%)</td><td>+</td><td>6021.56  (66.24,  1.10%)</td></tr>
 </table>
 ----
 <table>
@@ -47,18 +47,25 @@ If the default output contains more information than you'd like, pass the argume
 This results in __**truncated**__ output similar to the following (**two result sets**):
 
 _All values are measured in megabytes (MB)._
- |**DATABASE**|**TOTAL**|****|**DATA  (used,  %)**|**+**|**LOG  (used,  %)**|
- |master|5.00|=|4.00  (2.94,  73.50%)|+|1.00  (0.52,  52.00%)|
- |model|1.75|=|1.25  (1.25,  100.00%)|+|0.50  (0.44,  88.00%)|
- |msdb|35.37|=|30.31  (27.63,  91.16%)|+|5.06  (1.85,  36.56%)|
- |poobah|6138.00|=|5525.81  (5426.94,  98.21%)|+|612.19  (13.53,  2.21%)|
- |ReportServer|9.38|=|3.25  (2.88,  88.62%)|+|6.13  (1.02,  16.64%)|
- |ReportServerTempDB|3.00|=|2.25  (1.44,  64.00%)|+|0.75  (0.39,  52.00%)|
- |tempdb|52.25|=|49.75  (2.94,  5.91%)|+|2.50  (1.69,  67.60%)|
- |xanadu|35257.56|=|29236.00  (21845.81,  74.72%)|+|6021.56  (66.24,  1.10%)|
+
+<table>
+<tr><th>**DATABASE**</th><th>**TOTAL**</th><th>****</th><th>**DATA  (used,  %)**</th><th>**+**</th><th>**LOG  (used,  %)**</th></tr>
+<tr><td>master</td><td>5.00</td><td>=</td><td>4.00  (2.94,  73.50%)</td><td>+</td><td>1.00  (0.52,  52.00%)</td></tr>
+<tr><td>model</td><td>1.75</td><td>=</td><td>1.25  (1.25,  100.00%)</td><td>+</td><td>0.50  (0.44,  88.00%)</td></tr>
+<tr><td>msdb</td><td>35.37</td><td>=</td><td>30.31  (27.63,  91.16%)</td><td>+</td><td>5.06  (1.85,  36.56%)</td></tr>
+<tr><td>poobah</td><td>6138.00</td><td>=</td><td>5525.81  (5426.94,  98.21%)</td><td>+</td><td>612.19  (13.53,  2.21%)</td></tr>
+<tr><td>ReportServer</td><td>9.38</td><td>=</td><td>3.25  (2.88,  88.62%)</td><td>+</td><td>6.13  (1.02,  16.64%)</td></tr>
+<tr><td>ReportServerTempDB</td><td>3.00</td><td>=</td><td>2.25  (1.44,  64.00%)</td><td>+</td><td>0.75  (0.39,  52.00%)</td></tr>
+<tr><td>tempdb</td><td>52.25</td><td>=</td><td>49.75  (2.94,  5.91%)</td><td>+</td><td>2.50  (1.69,  67.60%)</td></tr>
+<tr><td>xanadu</td><td>35257.56</td><td>=</td><td>29236.00  (21845.81,  74.72%)</td><td>+</td><td>6021.56  (66.24,  1.10%)</td></tr>
+</table>
+
 ----
- |**SUM**|**USED**|**FREE**|**TOTAL**|**DATA**|**LOG**|
- |MB|27397.51|14104.80|41502.31|34852.62|6649.69|
+
+<table>
+<tr><th>**SUM**</th><th>**USED**</th><th>**FREE**</th><th>**TOTAL**</th><th>**DATA**</th><th>**LOG**</th></tr>
+<tr><td>MB</td><td>27397.51</td><td>14104.80</td><td>41502.31</td><td>34852.62</td><td>6649.69</td></tr>
+</table>
 
 === Argument: <Database Name> ===
 `sp_SDS` will accept a single database name as an argument:
