@@ -7,16 +7,17 @@ I originally wrote about this stored procedure here:
 
 http://www.ryanfrantz.com/2012/03/04/sql-server-database-storage-utilization-via-sp_sds-part-1/
 
-== Source ==
+Source
+------
 `sp_SDS` was originally written by Richard Ding; I have extended it with code lifted from the `sp_spaceused` stored procedure to monitor various aspects of a SQL Server and its databases' storage utilization.
 
-== Execution ==
+Execution
+---------
 `sp_SDS` can be run with no arguments, or with various arguments, depending on the desired output.
 
-=== No Arguments ===
-{{{
-exec sp_SDS
-}}}
+No Arguments
+------------
+`exec sp_SDS`
 
 This results in output similar to the following (**two result sets**):
 

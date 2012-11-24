@@ -21,7 +21,7 @@ AS
 
 /**************************************************************************************************
 **
-**  author: Richard Ding
+**  (original) author: Richard Ding
 **  date:   4/8/2008
 **  usage:  list db size AND path w/o SUMmary
 **  test code: sp_SDS   --  default behavior
@@ -34,7 +34,7 @@ AS
 **             sp_SDS 'tempdb', NULL, 1, 'kb'
 **
 **
-**	Note from the author I stumbed upon regarding large databases:
+**	Note from the author I stumbled upon regarding large databases:
 **	"If your database is at TB size, replace dec(10,3) with dev(13,3)."
 **	from http://www.sqlmag.com/forums/aft/96836
 **	ryanfrantz 20120210
@@ -150,10 +150,6 @@ begin
 				END
 			)
 	/* we need to make this dynamic SQL to handle calls for specific databases' details */
-	/*
-	from WH_PROD.sys.partitions p join WH_PROD.sys.allocation_units a on p.partition_id = a.container_id
-		left join WH_PROD.sys.internal_tables it on p.object_id = it.object_id
-	*/
 	from @sys_partitions p join @sys_allocation_units a on p.partition_id = a.container_id
 		left join @sys_internal_tables it on p.object_id = it.object_id
 
@@ -162,7 +158,6 @@ begin
 	if @allocation_stats = 'true'
 	begin
 	select 
-		--database_name = db_name(),
 		database_name = @dbname,
 		database_size = ltrim(str((convert (dec (15,2),@dbsize) + convert (dec (15,2),@logsize)) 
 			* 8192 / 1048576,15,2) + ' MB'),
@@ -452,22 +447,10 @@ IF UPPER(ISNULL(@Level, 'DATABASE')) = 'DATABASE'
       IF @nagios = 'true'
 		  SELECT 
 		  DatabaseName AS 'DATABASE',
-		  --CONVERT(VARCHAR(12), used) + '  (' + CONVERT(VARCHAR(12), [used (%)]) + ' %)' AS 'DATABASE USED  (%)',
-		  --CONVERT(VARCHAR(12), used) AS 'DATABASE USED',
-		  --[+],
-		  --CONVERT(VARCHAR(12), free) + '  (' + CONVERT(VARCHAR(12), [free (%)]) + ' %)' AS 'DATABASE FREE  (%)',
-		  --CONVERT(VARCHAR(12), free) AS 'DATABASE FREE',
-		  --[=],
 		  TOTAL AS 'DATABASE TOTAL', 
-		  --CONVERT(VARCHAR(12), [used (%)]) AS 'DATABASE USED  (%)',
-		  --CONVERT(VARCHAR(12), [free (%)]) AS 'DATABASE FREE  (%)',
-		  --[=],
-		  --CONVERT(VARCHAR(12), Data) + '  (' + CONVERT(VARCHAR(12), Data_Used) + ',  ' + CONVERT(VARCHAR(12), [Data_Used (%)]) + '%)' AS 'DATA  (used,  %)',
 		  CONVERT(VARCHAR(12), Data) AS 'DATA TOTAL',
 		  CONVERT(VARCHAR(12), Data_Used) AS 'DATA USED',
 		  CONVERT(VARCHAR(12), [Data_Used (%)]) AS 'DATA USED  (%)',
-		  --[+],
-		  --CONVERT(VARCHAR(12), Log) + '  (' + CONVERT(VARCHAR(12), Log_Used) + ',  ' + CONVERT(VARCHAR(12), [Log_Used (%)]) + '%)' AS 'LOG  (used,  %)'
 		  CONVERT(VARCHAR(12), Log) AS 'LOG TOTAL',
 		  CONVERT(VARCHAR(12), Log_Used) AS 'LOG USED',
 		  CONVERT(VARCHAR(12), [Log_Used (%)]) AS 'LOG USED  (%)'
@@ -493,22 +476,14 @@ IF UPPER(ISNULL(@Level, 'DATABASE')) = 'DATABASE'
 		  SELECT 
 		  CONVERT(dec(10, 2), TOTAL*100.0/@GrantTotal) AS 'WEIGHT (%)', 
 		  DatabaseName AS 'DATABASE',
-		  --CONVERT(VARCHAR(12), used) + '  (' + CONVERT(VARCHAR(12), [used (%)]) + ' %)' AS 'DATABASE USED  (%)',
 		  CONVERT(VARCHAR(12), used) AS 'DATABASE USED',
-		  --[+],
-		  --CONVERT(VARCHAR(12), free) + '  (' + CONVERT(VARCHAR(12), [free (%)]) + ' %)' AS 'DATABASE FREE  (%)',
 		  CONVERT(VARCHAR(12), free) AS 'DATABASE FREE',
-		  --[=],
 		  TOTAL AS 'DATABASE TOTAL', 
 		  CONVERT(VARCHAR(12), [used (%)]) AS 'DATABASE USED  (%)',
 		  CONVERT(VARCHAR(12), [free (%)]) AS 'DATABASE FREE  (%)',
-		  --[=],
-		  --CONVERT(VARCHAR(12), Data) + '  (' + CONVERT(VARCHAR(12), Data_Used) + ',  ' + CONVERT(VARCHAR(12), [Data_Used (%)]) + '%)' AS 'DATA  (used,  %)',
 		  CONVERT(VARCHAR(12), Data) AS 'DATA TOTAL',
 		  CONVERT(VARCHAR(12), Data_Used) AS 'DATA USED',
 		  CONVERT(VARCHAR(12), [Data_Used (%)]) AS 'DATA USED  (%)',
-		  --[+],
-		  --CONVERT(VARCHAR(12), Log) + '  (' + CONVERT(VARCHAR(12), Log_Used) + ',  ' + CONVERT(VARCHAR(12), [Log_Used (%)]) + '%)' AS 'LOG  (used,  %)'
 		  CONVERT(VARCHAR(12), Log) AS 'LOG TOTAL',
 		  CONVERT(VARCHAR(12), Log_Used) AS 'LOG USED',
 		  CONVERT(VARCHAR(12), [Log_Used (%)]) AS 'LOG USED  (%)'
