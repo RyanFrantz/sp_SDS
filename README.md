@@ -115,6 +115,7 @@ _All values are measured in megabytes (MB)._
 <tr><td>0.01</td><td>ReportServerTempDB</td><td>1.84</td><td>1.16</td><td>3.00</td><td>61.33</td><td>38.67</td><td>2.25</td><td>1.44</td><td>64.00</td><td>0.75</td><td>0.40</td><td>53.33</td></tr>
 <tr><td>0.13</td><td>tempdb</td><td>5.29</td><td>46.96</td><td>52.25</td><td>10.12</td><td>89.88</td><td>49.75</td><td>3.88</td><td>7.80</td><td>2.50</td><td>1.41</td><td>56.40</td></tr>
 <tr><td>84.94</td><td>xanadu</td><td>21888.92</td><td>13368.64</td><td>35257.56</td><td>62.08</td><td>37.92</td><td>29236.00</td><td>21845.56</td><td>74.72</td><td>6021.56</td><td>43.36</td><td>0.72</td></tr>
+</table>
 
 #### `@Mode = 'simple', @nagios = 'true'` ####
 
