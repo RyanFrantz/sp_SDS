@@ -128,7 +128,7 @@ This results in output similar to the following:
 _All values are measured in megabytes (MB)._
 
 <table>
-<tr>DATABASE</th><th>DATABASE TOTAL</th><th>DATA TOTAL</th><th>DATA USED</th><th>DATA USED  (%)</th><th>LOG TOTAL</th><th>LOG USED</th><th>LOG USED  (%)</th></tr>
+<tr><th>DATABASE</th><th>DATABASE TOTAL</th><th>DATA TOTAL</th><th>DATA USED</th><th>DATA USED  (%)</th><th>LOG TOTAL</th><th>LOG USED</th><th>LOG USED  (%)</th></tr>
 <tr><td>master</td><td>5.00</td><td>4.00</td><td>2.94</td><td>73.50</td><td>1.00</td><td>0.55</td><td>55.00</td></tr>
 <tr><td>model</td><td>1.75</td><td>1.25</td><td>1.25</td><td>100.00</td><td>0.50</td><td>0.44</td><td>88.00</td></tr>
 <tr><td>msdb</td><td>41.81</td><td>36.75</td><td>33.69</td><td>91.67</td><td>5.06</td><td>1.95</td><td>38.54</td></tr>
@@ -141,7 +141,7 @@ _All values are measured in megabytes (MB)._
 
 #### `database, @Mode = 'simple', @nagios = 'true'` ####
 
-To further restrict the output to a specific database, pass `<Database Name>, @Mode = 'simple', @nagios = 'true'` to `sp_SDS`:
+To further restrict the output to a specific database, pass `database, @Mode = 'simple', @nagios = 'true'` to `sp_SDS`:
 
 `exec sp_SDS poobah, @Mode = 'simple', @nagios = 'true'`
 
