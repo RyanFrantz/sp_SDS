@@ -24,7 +24,7 @@ This results in output similar to the following (**two result sets**):
 _All values are measured in megabytes (MB)._
 
 <table>
-<th>**WEIGHT (%)**</th><th>**DATABASE**</th><th>**DATABASE USED  (%)**</th><th>**+**</th><th>**DATABASE FREE  (%)**</th><th>****</th><th>**DATABASE TOTAL**</th><th>****</th><th>**DATA  (used,  %)**</th><th>**+**</th><th>**LOG  (used,  %)**</th><th>
+<tr><th>**WEIGHT (%)**</th><th>**DATABASE**</th><th>**DATABASE USED  (%)**</th><th>**+**</th><th>**DATABASE FREE  (%)**</th><th>****</th><th>**DATABASE TOTAL**</th><th>****</th><th>**DATA  (used,  %)**</th><th>**+**</th><th>**LOG  (used,  %)**</th></tr>
 <tr>0.01|master|3.46  (69.20 %)|+|1.54  (30.80 %)|=|5.00|=|4.00  (2.94,  73.50%)|+|1.00  (0.52,  52.00%)</tr>
 <tr>0.00|model|1.69  (96.57 %)|+|0.06  (3.43 %|=|1.75|=|1.25  (1.25,  100.00%)|+|0.50  (0.44,  88.00%)</tr>
 <tr>0.09|msdb|29.48  (83.35 %)|+|5.89  (16.65 %)|=|35.37|=|30.31  (27.63,  91.16%)|+|5.06  (1.85,  36.56%)</tr>
